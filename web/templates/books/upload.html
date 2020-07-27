@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}書籍画像をアップロード{% endblock %}
+
+{% block content %}
+<h2>{{book['title']}}の画像を指定</h2>
+<form method="post" enctype=multipart/form-data>
+<div>画像ファイルをアップロードして下さい。<br>
+<input type=file name=file></div>
+<input type="submit" value="アップロード">
+</form>
+<div>
+<a href="{{url_for('books.show',book_id=book['id'])}}">アップロードを中止する</a>
+</div>
+{% endblock %}
